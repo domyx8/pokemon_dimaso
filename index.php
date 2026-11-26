@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,12 +16,10 @@ if (!$file) {
     die("Errore nell'apertura del file");
 }
 
-// Lettura delle intestazioni
 $intestazioni = fgetcsv($file);
 
 echo "<table border='1'>";
 
-// Creazione della prima riga
 echo "<tr>";
 
 foreach ($intestazioni as $colonna) {
@@ -29,7 +28,6 @@ foreach ($intestazioni as $colonna) {
 
 echo "</tr>";
 
-// Lettura dei dati
 while (($riga = fgetcsv($file)) !== false) {
 
     echo "<tr>";
@@ -43,7 +41,6 @@ while (($riga = fgetcsv($file)) !== false) {
 
 echo "</table>";
 
-// Chiusura del file
 fclose($file);
 
 ?>
